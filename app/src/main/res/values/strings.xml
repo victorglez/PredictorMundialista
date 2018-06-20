@@ -8,4 +8,5 @@
     <string name="f">F</string>
     <string name="g">G</string>
     <string name="h">H</string>
+    <string name="send">SendPrediction</string>
 </resources>

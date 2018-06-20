@@ -84,10 +84,17 @@ public class CountryActivity extends AppCompatActivity implements ViewPager.OnPa
 
     @Override
     public void onPageSelected(int position) {
-        if(ganadoresLista[position][0] != null)
-            getTextViews(position)[0].setText(ganadoresLista[position][0]);
-        if(ganadoresLista[position][1] != null)
-            getTextViews(position)[1].setText(ganadoresLista[position][1]);
+        if (position <= 7)
+        {
+            if(ganadoresLista[position][0] != null)
+                getTextViews(position)[0].setText(ganadoresLista[position][0]);
+            if(ganadoresLista[position][1] != null)
+                getTextViews(position)[1].setText(ganadoresLista[position][1]);
+        }
+        else if (position == 8)
+        {
+            //Load the Send Data
+        }
     }
 
     @Override

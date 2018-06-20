@@ -9,7 +9,8 @@ public enum ModelObject {
     E(R.string.e, R.layout.grupo_e),
     F(R.string.f, R.layout.grupo_f),
     G(R.string.g, R.layout.grupo_g),
-    H(R.string.h, R.layout.grupo_h);
+    H(R.string.h, R.layout.grupo_h),
+    SEND(R.string.send, R.layout.send_prediction);
 
     private int mTitleResId;
     private int mLayoutResId;
