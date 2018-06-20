@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class CountryActivity extends AppCompatActivity implements ViewPager.OnPageChangeListener{
     private boolean[] ganadorGroupoLista = new boolean[8];
@@ -75,6 +76,11 @@ public class CountryActivity extends AppCompatActivity implements ViewPager.OnPa
         ganadorGroupoLista[posicionGroupo] = !ganadorGroupoLista[posicionGroupo];
         (getTextViews(posicionGroupo)[posicion]).setText(boton.getTag().toString());
         ganadoresLista[posicionGroupo][posicion] = boton.getTag().toString();
+    }
+
+    public void sendPrediction (View view)
+    {
+        Toast.makeText(this, "Enviado correctamente", Toast.LENGTH_LONG).show();
     }
 
     @Override

@@ -10,13 +10,14 @@
 
     <Button
         android:id="@+id/sendButton"
+        style="@style/ButtonStyle"
+        android:drawableLeft="@drawable/send_button"
+        android:onClick="sendPrediction"
+        android:text="Enviar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        style="@style/ButtonStyle"
-        android:drawableLeft="@drawable/send_button"
-        android:text="Enviar"
         app:layout_constraintVertical_bias="0.9" />
 
 
