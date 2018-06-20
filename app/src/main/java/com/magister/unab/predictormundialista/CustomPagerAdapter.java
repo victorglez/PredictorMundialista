@@ -29,14 +29,10 @@ public class CustomPagerAdapter extends PagerAdapter {
     }
 
     @Override
-    public int getCount() {
-        return ModelObject.values().length;
-    }
+    public int getCount(){return ModelObject.values().length;}
 
     @Override
-    public boolean isViewFromObject(View view, Object object) {
-        return view == object;
-    }
+    public boolean isViewFromObject(View view, Object object){return view == object;}
 
     @Override
     public CharSequence getPageTitle(int position) {

@@ -8,6 +8,9 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class CountryActivity extends AppCompatActivity implements ViewPager.OnPageChangeListener{
     private boolean[] ganadorGroupoLista = new boolean[8];
     private String [][] ganadoresLista = new String[8][2];
@@ -78,33 +81,48 @@ public class CountryActivity extends AppCompatActivity implements ViewPager.OnPa
         ganadoresLista[posicionGroupo][posicion] = boton.getTag().toString();
     }
 
-    public void sendPrediction (View view)
-    {
+    public void sendPrediction (View view){
         Toast.makeText(this, "Enviado correctamente", Toast.LENGTH_LONG).show();
     }
 
     @Override
-    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
-    }
+    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels){}
 
     @Override
     public void onPageSelected(int position) {
-        if (position <= 7)
-        {
+        if (position <= 7){
             if(ganadoresLista[position][0] != null)
                 getTextViews(position)[0].setText(ganadoresLista[position][0]);
             if(ganadoresLista[position][1] != null)
                 getTextViews(position)[1].setText(ganadoresLista[position][1]);
-        }
-        else if (position == 8)
-        {
-            //Load the Send Data
+        }else if (position == 8){
+            List<TextView> finalistas = new ArrayList<>();
+
+            finalistas.add((TextView) findViewById(R.id.idTextFinalista1));
+            finalistas.add((TextView) findViewById(R.id.idTextFinalista2));
+            finalistas.add((TextView) findViewById(R.id.idTextFinalista3));
+            finalistas.add((TextView) findViewById(R.id.idTextFinalista4));
+            finalistas.add((TextView) findViewById(R.id.idTextFinalista5));
+            finalistas.add((TextView) findViewById(R.id.idTextFinalista6));
+            finalistas.add((TextView) findViewById(R.id.idTextFinalista7));
+            finalistas.add((TextView) findViewById(R.id.idTextFinalista8));
+            finalistas.add((TextView) findViewById(R.id.idTextFinalista9));
+            finalistas.add((TextView) findViewById(R.id.idTextFinalista10));
+            finalistas.add((TextView) findViewById(R.id.idTextFinalista11));
+            finalistas.add((TextView) findViewById(R.id.idTextFinalista12));
+            finalistas.add((TextView) findViewById(R.id.idTextFinalista13));
+            finalistas.add((TextView) findViewById(R.id.idTextFinalista14));
+            finalistas.add((TextView) findViewById(R.id.idTextFinalista15));
+            finalistas.add((TextView) findViewById(R.id.idTextFinalista16));
+
+            for(int i=0,u=0;i<8;i++){
+                for(int e=0;e<2;e++){
+                    finalistas.get(u++).setText(ganadoresLista[i][e]);
+                }
+            }
         }
     }
 
     @Override
-    public void onPageScrollStateChanged(int state) {
-
-    }
+    public void onPageScrollStateChanged(int state){}
 }
