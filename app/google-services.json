@@ -1,0 +1,59 @@
+{
+  "project_info": {
+    "project_number": "305407505549",
+    "firebase_url": "https://cursoandroidunab.firebaseio.com",
+    "project_id": "cursoandroidunab",
+    "storage_bucket": "cursoandroidunab.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:305407505549:android:2c000ef13b5a30f8",
+        "android_client_info": {
+          "package_name": "com.magister.unab.predictormundialista"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "305407505549-lj4ba718db6oqsaea33kl2d4hfb97msf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.magister.unab.predictormundialista",
+            "certificate_hash": "8f5980e57945b24f491da208d35269769d21ac34"
+          }
+        },
+        {
+          "client_id": "305407505549-skll89t54iv7n9r95mpt2qg1brgv00km.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "305407505549-skll89t54iv7n9r95mpt2qg1brgv00km.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC9PHqmipuXIjxG1h8_RGdTLbrcvpI6U6M"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "305407505549-skll89t54iv7n9r95mpt2qg1brgv00km.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
