@@ -21,4 +21,25 @@
         <item name="android:typeface">normal</item>
     </style>
 
+    <style name="FinalistaStyle">
+        <item name="android:layout_width">80dp</item>
+        <item name="android:layout_height">70dp</item>
+        <item name="android:layout_marginBottom">8dp</item>
+        <item name="android:layout_marginEnd">8dp</item>
+        <item name="android:layout_marginStart">8dp</item>
+        <item name="android:layout_marginTop">8dp</item>
+    </style>
+
+    <style name="FinalistaTextStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">8dp</item>
+        <item name="android:layout_marginStart">8dp</item>
+        <item name="android:layout_marginEnd">8dp</item>
+        <item name="android:background">#b4323232</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:textSize">12dp</item>
+        <item name="android:padding">4dp</item>
+    </style>
+
 </resources>

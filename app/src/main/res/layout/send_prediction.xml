@@ -8,309 +8,325 @@
     android:tag="send_prediction"
     tools:context="com.magister.unab.predictormundialista.CountryActivity">
 
-    <TextView
-        android:id="@+id/idTextFinalista1"
-        android:layout_width="145dp"
-        android:layout_height="28dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:background="#AA9999"
-        android:text="1° Finalista"
-        android:textColor="#172CED"
-        android:textSize="18dp"
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/idPanelFinalista1"
+        style="@style/FinalistaStyle"
+        android:background="@drawable/alemania_flag"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.089"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.043" />
+        app:layout_constraintHorizontal_bias="0.149"
+        app:layout_constraintVertical_bias="0.015">
 
-    <TextView
-        android:id="@+id/idTextFinalista2"
-        android:layout_width="145dp"
-        android:layout_height="28dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:background="#AA9999"
-        android:text="2° Finalista"
-        android:textColor="#172CED"
-        android:textSize="18dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.089"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.139" />
+        <TextView
+            android:id="@+id/idTextFinalista1"
+            style="@style/FinalistaTextStyle"
+            android:text="Finalista 1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
-        android:id="@+id/idTextFinalista3"
-        android:layout_width="145dp"
-        android:layout_height="28dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:background="#AA9999"
-        android:text="3° Finalista"
-        android:textColor="#172CED"
-        android:textSize="18dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.089"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.239" />
+    </android.support.constraint.ConstraintLayout>
 
-    <TextView
-        android:id="@+id/idTextFinalista4"
-        android:layout_width="145dp"
-        android:layout_height="28dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:background="#AA9999"
-        android:text="4° Finalista"
-        android:textColor="#172CED"
-        android:textSize="18dp"
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/idPanelFinalista2"
+        style="@style/FinalistaStyle"
+        android:background="@drawable/alemania_flag"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.089"
+        app:layout_constraintHorizontal_bias="0.904"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.34" />
+        app:layout_constraintVertical_bias="0.015">
 
-    <TextView
-        android:id="@+id/idTextFinalista5"
-        android:layout_width="145dp"
-        android:layout_height="26dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:background="#AA9999"
-        android:text="5° Finalista"
-        android:textColor="#172CED"
-        android:textSize="18dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.089"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.432" />
+        <TextView
+            android:id="@+id/idTextFinalista2"
+            style="@style/FinalistaTextStyle"
+            android:text="Finalista 2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
-    <TextView
-        android:id="@+id/idTextFinalista6"
-        android:layout_width="145dp"
-        android:layout_height="28dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:background="#AA9999"
-        android:text="6° Finalista"
-        android:textColor="#172CED"
-        android:textSize="18dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.089"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.537" />
+    </android.support.constraint.ConstraintLayout>
 
-    <TextView
-        android:id="@+id/idTextFinalista7"
-        android:layout_width="145dp"
-        android:layout_height="28dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:background="#AA9999"
-        android:text="7° Finalista"
-        android:textColor="#172CED"
-        android:textSize="18dp"
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/idPanelFinalista3"
+        style="@style/FinalistaStyle"
+        android:background="@drawable/alemania_flag"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.089"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.64" />
+        app:layout_constraintTop_toTopOf="@+id/idPanelFinalista1"
+        app:layout_constraintHorizontal_bias="0.149"
+        app:layout_constraintVertical_bias="0.115">
 
-    <TextView
-        android:id="@+id/idTextFinalista8"
-        android:layout_width="145dp"
-        android:layout_height="28dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:background="#AA9999"
-        android:text="8° Finalista"
-        android:textColor="#172CED"
-        android:textSize="18dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.089"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.743" />
+        <TextView
+            android:id="@+id/idTextFinalista3"
+            style="@style/FinalistaTextStyle"
+            android:text="Finalista 3"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
-        android:id="@+id/idTextFinalista9"
-        android:layout_width="145dp"
-        android:layout_height="28dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:background="#AA9999"
-        android:text="9° Finalista"
-        android:textColor="#172CED"
-        android:textSize="18dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.905"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.042" />
+    </android.support.constraint.ConstraintLayout>
 
-    <TextView
-        android:id="@+id/idTextFinalista10"
-        android:layout_width="145dp"
-        android:layout_height="28dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:background="#AA9999"
-        android:text="10° Finalista"
-        android:textColor="#172CED"
-        android:textSize="18dp"
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/idPanelFinalista4"
+        style="@style/FinalistaStyle"
+        android:background="@drawable/alemania_flag"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.905"
+        app:layout_constraintHorizontal_bias="0.904"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.139" />
+        app:layout_constraintTop_toTopOf="@+id/idPanelFinalista2"
+        app:layout_constraintVertical_bias="0.115">
 
-    <TextView
-        android:id="@+id/idTextFinalista11"
-        android:layout_width="145dp"
-        android:layout_height="28dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:background="#AA9999"
-        android:text="11° Finalista"
-        android:textColor="#172CED"
-        android:textSize="18dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.905"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.239" />
+        <TextView
+            android:id="@+id/idTextFinalista4"
+            style="@style/FinalistaTextStyle"
+            android:text="Finalista 4"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
-    <TextView
-        android:id="@+id/idTextFinalista12"
-        android:layout_width="145dp"
-        android:layout_height="28dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:background="#AA9999"
-        android:text="12° Finalista"
-        android:textColor="#172CED"
-        android:textSize="18dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.905"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.34" />
+    </android.support.constraint.ConstraintLayout>
 
-    <TextView
-        android:id="@+id/idTextFinalista13"
-        android:layout_width="145dp"
-        android:layout_height="28dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:background="#AA9999"
-        android:text="13° Finalista"
-        android:textColor="#172CED"
-        android:textSize="18dp"
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/idPanelFinalista5"
+        style="@style/FinalistaStyle"
+        android:background="@drawable/alemania_flag"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.905"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.434" />
+        app:layout_constraintTop_toTopOf="@+id/idPanelFinalista3"
+        app:layout_constraintHorizontal_bias="0.149"
+        app:layout_constraintVertical_bias="0.135">
 
-    <TextView
-        android:id="@+id/idTextFinalista14"
-        android:layout_width="145dp"
-        android:layout_height="28dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:background="#AA9999"
-        android:text="14° Finalista"
-        android:textColor="#172CED"
-        android:textSize="18dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.905"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.537" />
+        <TextView
+            android:id="@+id/idTextFinalista5"
+            style="@style/FinalistaTextStyle"
+            android:text="Finalista 5"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
-        android:id="@+id/idTextFinalista15"
-        android:layout_width="145dp"
-        android:layout_height="28dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:background="#AA9999"
-        android:text="15° Finalista"
-        android:textColor="#172CED"
-        android:textSize="18dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.905"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.64" />
+    </android.support.constraint.ConstraintLayout>
 
-    <TextView
-        android:id="@+id/idTextFinalista16"
-        android:layout_width="145dp"
-        android:layout_height="28dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:background="#AA9999"
-        android:text="16° Finalista"
-        android:textColor="#172CED"
-        android:textSize="18dp"
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/idPanelFinalista6"
+        style="@style/FinalistaStyle"
+        android:background="@drawable/alemania_flag"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.905"
+        app:layout_constraintHorizontal_bias="0.904"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.743" />
+        app:layout_constraintTop_toTopOf="@+id/idPanelFinalista4"
+        app:layout_constraintVertical_bias="0.135">
+
+        <TextView
+            android:id="@+id/idTextFinalista6"
+            style="@style/FinalistaTextStyle"
+            android:text="Finalista 6"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/idPanelFinalista7"
+        style="@style/FinalistaStyle"
+        android:background="@drawable/alemania_flag"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/idPanelFinalista5"
+        app:layout_constraintHorizontal_bias="0.149"
+        app:layout_constraintVertical_bias="0.160">
+
+        <TextView
+            android:id="@+id/idTextFinalista7"
+            style="@style/FinalistaTextStyle"
+            android:text="Finalista 7"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/idPanelFinalista8"
+        style="@style/FinalistaStyle"
+        android:background="@drawable/alemania_flag"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.904"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/idPanelFinalista6"
+        app:layout_constraintVertical_bias="0.160">
+
+        <TextView
+            android:id="@+id/idTextFinalista8"
+            style="@style/FinalistaTextStyle"
+            android:text="Finalista 8"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/idPanelFinalista9"
+        style="@style/FinalistaStyle"
+        android:background="@drawable/alemania_flag"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/idPanelFinalista7"
+        app:layout_constraintHorizontal_bias="0.149"
+        app:layout_constraintVertical_bias="0.200">
+
+        <TextView
+            android:id="@+id/idTextFinalista9"
+            style="@style/FinalistaTextStyle"
+            android:text="Finalista 9"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/idPanelFinalista10"
+        style="@style/FinalistaStyle"
+        android:background="@drawable/alemania_flag"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.904"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/idPanelFinalista8"
+        app:layout_constraintVertical_bias="0.200">
+
+        <TextView
+            android:id="@+id/idTextFinalista10"
+            style="@style/FinalistaTextStyle"
+            android:text="Finalista 10"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/idPanelFinalista11"
+        style="@style/FinalistaStyle"
+        android:background="@drawable/alemania_flag"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/idPanelFinalista9"
+        app:layout_constraintHorizontal_bias="0.149"
+        app:layout_constraintVertical_bias="0.255">
+
+        <TextView
+            android:id="@+id/idTextFinalista11"
+            style="@style/FinalistaTextStyle"
+            android:text="Finalista 11"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/idPanelFinalista12"
+        style="@style/FinalistaStyle"
+        android:background="@drawable/alemania_flag"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.904"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/idPanelFinalista10"
+        app:layout_constraintVertical_bias="0.255">
+
+        <TextView
+            android:id="@+id/idTextFinalista12"
+            style="@style/FinalistaTextStyle"
+            android:text="Finalista 12"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/idPanelFinalista13"
+        style="@style/FinalistaStyle"
+        android:background="@drawable/alemania_flag"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/idPanelFinalista11"
+        app:layout_constraintHorizontal_bias="0.149"
+        app:layout_constraintVertical_bias="0.365">
+
+        <TextView
+            android:id="@+id/idTextFinalista13"
+            style="@style/FinalistaTextStyle"
+            android:text="Finalista 13"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/idPanelFinalista14"
+        style="@style/FinalistaStyle"
+        android:background="@drawable/alemania_flag"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.904"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/idPanelFinalista12"
+        app:layout_constraintVertical_bias="0.365">
+
+        <TextView
+            android:id="@+id/idTextFinalista14"
+            style="@style/FinalistaTextStyle"
+            android:text="Finalista 14"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/idPanelFinalista15"
+        style="@style/FinalistaStyle"
+        android:background="@drawable/alemania_flag"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/idPanelFinalista13"
+        app:layout_constraintHorizontal_bias="0.149"
+        app:layout_constraintVertical_bias="0.625">
+
+        <TextView
+            android:id="@+id/idTextFinalista15"
+            style="@style/FinalistaTextStyle"
+            android:text="Finalista 15"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/idPanelFinalista16"
+        style="@style/FinalistaStyle"
+        android:background="@drawable/alemania_flag"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.904"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/idPanelFinalista14"
+        app:layout_constraintVertical_bias="0.625">
+
+        <TextView
+            android:id="@+id/idTextFinalista16"
+            style="@style/FinalistaTextStyle"
+            android:text="Finalista 16"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </android.support.constraint.ConstraintLayout>
 
     <Button
         android:id="@+id/sendButton"
@@ -322,6 +338,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.9" />
+        app:layout_constraintVertical_bias="0.965" />
 
 </android.support.constraint.ConstraintLayout>
