@@ -1,5 +1,6 @@
 package com.magister.unab.predictormundialista;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -69,9 +70,13 @@ public class MainActivity extends AppCompatActivity
         switch (id)
         {
             case R.id.menu_item_prediction:
+                Intent intent_menu_item_prediction = new Intent(this, CountryActivity.class);
+                startActivity(intent_menu_item_prediction);
                 break;
 
             case R.id.menu_item_one_activity:
+                Intent intent_menu_item_one_activity = new Intent(this, GroupOneActivity.class);
+                startActivity(intent_menu_item_one_activity);
                 break;
 
             case R.id.menu_item_two_activity:

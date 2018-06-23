@@ -50,18 +50,6 @@ public class CountryActivity extends AppCompatActivity implements ViewPager.OnPa
         ganadoresLista[posicionGroupo][posicion] = boton.getTag().toString();
     }
 
-    public void sendPrediction (View view){
-        Toast.makeText(this, "Enviado correctamente", Toast.LENGTH_LONG).show();
-    }
-
-    public void sendDataGroupOne(View view){
-        Intent intent = new Intent(this, GroupOneActivity.class);
-        //TextView editText = (TextView) findViewById(R.id.idTextFinalista1);
-        String message = "Esto es una prueba de Mensaje";
-        intent.putExtra("pruebaMensaje", message);
-        startActivity(intent);
-    }
-
     @Override
     public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels){}
 
