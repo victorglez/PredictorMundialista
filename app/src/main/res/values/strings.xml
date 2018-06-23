@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">PredictorMundialista</string>
+    <string name="app_name">Predictor Mundialista</string>
     <string name="a">A</string>
     <string name="b">B</string>
     <string name="c">C</string>
@@ -10,4 +10,19 @@
     <string name="h">H</string>
     <string name="send">SendPrediction</string>
     <string name="group1">GroupOneActivity</string>
+
+    <!--Main Activity Resources-->
+    <string name="title_activity_main">Predictor Mundialista</string>
+    <string name="nav_header_title">Menú</string>
+    <string name="menu_item_one_activity">Grupos por primer lugar</string>
+    <string name="menu_item_two_activity">Grupos por segundo lugar</string>
+    <string name="menu_item_three_activity">Probabilidad de ganar</string>
+    <string name="menu_item_four_activity">Probabilidad de perder</string>
+    <string name="menu_item_five_activity">Países por votación</string>
+    <string name="menu_group_prediction">Predictor</string>
+    <string name="menu_item_prediction">Pronóstico Mundialista</string>
+
+    <string name="navigation_drawer_open">Abrir Menú</string>
+    <string name="navigation_drawer_close">Cerrar Menú</string>
+    <string name="nav_header_desc">Menú de Navegación</string>
 </resources>
