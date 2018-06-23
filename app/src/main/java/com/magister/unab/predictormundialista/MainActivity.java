@@ -80,15 +80,23 @@ public class MainActivity extends AppCompatActivity
                 break;
 
             case R.id.menu_item_two_activity:
+                Intent intent_menu_item_two_activity = new Intent(this, GroupOneActivity.class);
+                startActivity(intent_menu_item_two_activity);
                 break;
 
             case R.id.menu_item_three_activity:
+                Intent intent_menu_item_three_activity = new Intent(this, GroupOneActivity.class);
+                startActivity(intent_menu_item_three_activity);
                 break;
 
             case R.id.menu_item_four_activity:
+                Intent intent_menu_item_four_activity = new Intent(this, GroupOneActivity.class);
+                startActivity(intent_menu_item_four_activity);
                 break;
 
             case R.id.menu_item_five_activity:
+                Intent intent_menu_item_five_activity = new Intent(this, GroupOneActivity.class);
+                startActivity(intent_menu_item_five_activity);
                 break;
         }
 
