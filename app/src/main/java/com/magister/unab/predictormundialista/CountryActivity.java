@@ -31,7 +31,6 @@ public class CountryActivity extends AppCompatActivity implements ViewPager.OnPa
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_country);
 
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewpagerCountry);

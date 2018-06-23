@@ -12,9 +12,8 @@
     <string name="group1">GroupOneActivity</string>
 
     <!--Main Activity Resources-->
-    <string name="title_activity_main">Predictor Mundialista</string>
     <string name="nav_header_title">Menú</string>
-    <string name="menu_item_one_activity">Grupos por primer lugar</string>
+    <string name="menu_item_one_activity">Primer lugar por grupos</string>
     <string name="menu_item_two_activity">Grupos por segundo lugar</string>
     <string name="menu_item_three_activity">Probabilidad de ganar</string>
     <string name="menu_item_four_activity">Probabilidad de perder</string>

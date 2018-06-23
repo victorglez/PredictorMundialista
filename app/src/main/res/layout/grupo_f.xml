@@ -8,65 +8,6 @@
     tools:context="com.magister.unab.predictormundialista.CountryActivity"
     android:background="@drawable/fondo">
 
-    <ImageButton
-        android:id="@+id/imageButton3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton5"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton4"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintHorizontal_chainStyle="spread"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/alemania_full"
-        android:onClick="sendValue"
-        android:tag="Alemania" />
-
-    <ImageButton
-        android:id="@+id/imageButton4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton6"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/imageButton3"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/mexico_full"
-        android:onClick="sendValue"
-        android:tag="México"/>
-
-    <ImageButton
-        android:id="@+id/imageButton5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/imageButton6"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton3"
-        app:srcCompat="@drawable/suecia_full"
-        android:onClick="sendValue"
-        android:tag="Suecia" />
-
-    <ImageButton
-        android:id="@+id/imageButton6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/imageButton5"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton4"
-        app:srcCompat="@drawable/corea_full"
-        android:onClick="sendValue"
-        android:tag="Corea del Sur" />
-
     <TextView
         android:id="@+id/textView"
         android:layout_width="19dp"
@@ -81,6 +22,61 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageButton
+        android:id="@+id/imageButton3"
+        style="@style/GroupItemImagenButonStyle"
+        android:layout_marginStart="8dp"
+        android:onClick="sendValue"
+        android:tag="Alemania"
+        app:layout_constraintBottom_toTopOf="@+id/imageButton5"
+        app:layout_constraintEnd_toStartOf="@+id/imageButton4"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/alemania_full" />
+
+    <ImageButton
+        android:id="@+id/imageButton4"
+        style="@style/GroupItemImagenButonStyle"
+        android:layout_marginEnd="8dp"
+        android:onClick="sendValue"
+        android:tag="México"
+        app:layout_constraintBottom_toTopOf="@+id/imageButton6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imageButton3"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/mexico_full" />
+
+    <ImageButton
+        android:id="@+id/imageButton5"
+        style="@style/GroupItemImagenButonStyle"
+        android:layout_marginBottom="64dp"
+        android:layout_marginStart="8dp"
+        android:onClick="sendValue"
+        android:tag="Suecia"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imageButton6"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton3"
+        app:srcCompat="@drawable/suecia_full" />
+
+    <ImageButton
+        android:id="@+id/imageButton6"
+        style="@style/GroupItemImagenButonStyle"
+        android:layout_marginBottom="64dp"
+        android:layout_marginEnd="8dp"
+        android:onClick="sendValue"
+        android:tag="Corea del Sur"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/imageButton5"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton4"
+        app:srcCompat="@drawable/corea_full" />
+
     <TextView
         android:id="@+id/primero_f"
         android:layout_width="0dp"
@@ -89,7 +85,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="32dp"
         android:background="@android:color/holo_orange_light"
-        android:text="Primero"
+        android:text="Primero del grupo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/segundo_f"
         app:layout_constraintHorizontal_bias="0.5"
@@ -103,7 +99,7 @@
         android:layout_marginEnd="32dp"
         android:layout_marginStart="8dp"
         android:background="@android:color/darker_gray"
-        android:text="Segundo"
+        android:text="Segundo del grupo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"

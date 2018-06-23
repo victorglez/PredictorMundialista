@@ -9,11 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CountryActivity"></activity>
-        <activity android:name=".GroupOneActivity"></activity>
         <activity
             android:name=".MainActivity"
-            android:label="@string/title_activity_main"
+            android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,6 +19,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".CountryActivity"
+                  android:label="@string/menu_item_prediction"/>
+        <activity android:name=".GroupOneActivity"
+                  android:label="@string/menu_item_one_activity"/>
     </application>
 
 </manifest>
