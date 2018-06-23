@@ -16,6 +16,11 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+
 public class GroupOneActivity  extends AppCompatActivity implements ViewPager.OnPageChangeListener {
 
     @Override
@@ -26,12 +31,9 @@ public class GroupOneActivity  extends AppCompatActivity implements ViewPager.On
         // Get the Intent that started this activity and extract the string
         Intent intent = getIntent();
         String message = intent.getStringExtra("pruebaMensaje");
-
-        //ViewPager viewPager = (ViewPager) findViewById(R.id.viewpagerGroupOne);
-        //viewPager.addOnPageChangeListener(this);
-        //viewPager.setAdapter(new CustomPagerAdapter(this));
     }
 
+    //Example
     private void loadFromFirebase(){
         DatabaseReference resultsDB = FirebaseDatabase.getInstance().getReference().child("resultados");
 
@@ -57,6 +59,63 @@ public class GroupOneActivity  extends AppCompatActivity implements ViewPager.On
             public void onCancelled(DatabaseError databaseError){
             }
         });
+    }
+
+    List<String> countries;
+    String numGroup;
+
+    //Probabilidad en porcentaje de ganar para el grupo 0 por ahora que corresponde al A... a modo de prueba
+    public void getValueProbabilityWinning(View view){
+        loadFromFirebase();
+        numGroup = "0"; //Example Num Group
+        countries = getAllCountriesForGroup();
+        Set<String> uniqueCountries = new HashSet<String>(countries);
+        ArrayList<CountryDO> countriesAndCountArray = new ArrayList<>();
+
+        for(String uniqueCountry : uniqueCountries){
+            int count = 0;
+            CountryDO countryAndCount = new CountryDO();
+            for(String country : countries){
+                if(uniqueCountry.equals(country)){
+                    countryAndCount.setCount(count++);
+                    countryAndCount.setName(uniqueCountry);
+                }
+            }
+            countriesAndCountArray.add(countryAndCount);
+        }
+
+        for(CountryDO countryDO : countriesAndCountArray){
+            countryDO.setPercentage(countryDO.getCount()*100/countries.size());
+            System.out.println(countryDO.getCount());
+            System.out.println(countryDO.getName());
+            System.out.println(countryDO.getPercentage());
+        }
+    }
+
+    //Obtiene todos los paises por grupo el numero de grupo llega de forma global.
+    private List<String> getAllCountriesForGroup() {
+        DatabaseReference resultsDB = FirebaseDatabase.getInstance().getReference().child("resultados");
+
+        resultsDB.addValueEventListener(new ValueEventListener() {
+            //resultsDB.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot resultados) {
+                countries = new ArrayList<>();
+                for (DataSnapshot respuesta : resultados.getChildren()) {
+                    for (DataSnapshot grupo : respuesta.getChildren()) {
+                        if (grupo.getKey().equals(numGroup)) {
+                            for (DataSnapshot equipo : grupo.getChildren()) {
+                                countries.add((String) equipo.getValue());
+                            }
+                        }
+                    }
+                }
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });
+        return countries;
     }
 
     @Override
