@@ -1,5 +1,6 @@
 package com.magister.unab.predictormundialista;
 
+import android.content.Intent;
 import android.os.Debug;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
@@ -8,13 +9,20 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.support.constraint.ConstraintLayout;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class CountryActivity extends AppCompatActivity implements ViewPager.OnPageChangeListener{
     private boolean[] ganadorGroupoLista = new boolean[8];
@@ -26,7 +34,7 @@ public class CountryActivity extends AppCompatActivity implements ViewPager.OnPa
 
         setContentView(R.layout.activity_country);
 
-        ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
+        ViewPager viewPager = (ViewPager) findViewById(R.id.viewpagerCountry);
         viewPager.addOnPageChangeListener(this);
         viewPager.setAdapter(new CustomPagerAdapter(this));
     }
@@ -44,6 +52,14 @@ public class CountryActivity extends AppCompatActivity implements ViewPager.OnPa
 
     public void sendPrediction (View view){
         Toast.makeText(this, "Enviado correctamente", Toast.LENGTH_LONG).show();
+    }
+
+    public void sendDataGroupOne(View view){
+        Intent intent = new Intent(this, GroupOneActivity.class);
+        //TextView editText = (TextView) findViewById(R.id.idTextFinalista1);
+        String message = "Esto es una prueba de Mensaje";
+        intent.putExtra("pruebaMensaje", message);
+        startActivity(intent);
     }
 
     @Override
@@ -86,8 +102,7 @@ public class CountryActivity extends AppCompatActivity implements ViewPager.OnPa
                         try
                         {
                             panels[e].setBackground(ContextCompat.getDrawable(this, FlagEntity.valueOf(country.replace(" ", "_")).getDrawableResId()));
-                        }catch (Exception ex)
-                        {
+                        }catch (Exception ex){
                             Log.d("Exception", ex.getMessage());
                         }
                 }
@@ -185,4 +200,36 @@ public class CountryActivity extends AppCompatActivity implements ViewPager.OnPa
         }
         return panelViews;
     }
+
+    public void terminarPrediccion(View view){
+        if(!validateDataToSend()){
+            Toast.makeText(this, "Debes predecir TODOS los grupos", Toast.LENGTH_LONG).show();
+            return;
+        }
+        sendDataToFirebase();
+        Toast.makeText(this, "Enviado a firebase!", Toast.LENGTH_LONG).show();
+    }
+
+    private boolean validateDataToSend(){
+        for(String[] grupo: ganadoresLista){
+            for(String equipo: grupo){
+                if(equipo == null) return false;
+            }
+        }
+        return true;
+    }
+
+    private void sendDataToFirebase(){
+        DatabaseReference resultsDB = FirebaseDatabase.getInstance().getReference().child("resultados");
+
+        List<List<String>> listaGanadores = new ArrayList<>();
+        for(String[] grupo:ganadoresLista){
+            listaGanadores.add(Arrays.asList(grupo));
+        }
+        String key = resultsDB.push().getKey();
+        Map<String, Object> childUpdates = new HashMap<>();
+        childUpdates.put(key, listaGanadores);
+        resultsDB.updateChildren(childUpdates);
+    }
+
 }

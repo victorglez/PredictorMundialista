@@ -384,7 +384,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:drawableLeft="@drawable/send_button"
-        android:onClick="sendPrediction"
+        android:onClick="terminarPrediccion"
         android:paddingBottom="4dp"
         android:paddingEnd="12dp"
         android:paddingStart="12dp"

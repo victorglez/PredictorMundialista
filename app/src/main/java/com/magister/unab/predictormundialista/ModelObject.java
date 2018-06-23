@@ -2,6 +2,7 @@ package com.magister.unab.predictormundialista;
 
 public enum ModelObject {
 
+    //CountryActivity
     A(R.string.a, R.layout.grupo_a),
     B(R.string.b, R.layout.grupo_b),
     C(R.string.c, R.layout.grupo_c),
