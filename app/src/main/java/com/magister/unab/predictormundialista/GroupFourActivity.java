@@ -42,10 +42,10 @@ public class GroupFourActivity extends AppCompatActivity {
     }
 
     /**
-     * Probabilidad en porcentaje de ganar para el grupo seleccionado
+     * Probabilidad en porcentaje para el grupo seleccionado
      * @param view View
      */
-    public void getValueProbabilityWinning(View view)
+    public void getValueProbability(View view)
     {
         groupSelected = GroupHelper.getNumGroupSelect(view);
 

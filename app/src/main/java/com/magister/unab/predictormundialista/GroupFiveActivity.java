@@ -5,8 +5,10 @@ import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TableLayout;
 import android.widget.TableRow;
@@ -298,29 +300,73 @@ public class GroupFiveActivity extends AppCompatActivity {
     {
         TableLayout stk = (TableLayout) findViewById(R.id.resultTableView);
 
+        stk.removeAllViews();
+
         //Set Row
         TableRow tbrow0 = new TableRow(this);
 
         TextView tv0 = new TextView(this);
         tv0.setText(" Bandera ");
         tv0.setTextAppearance(this, R.style.HeaderTextStyle);
+        tv0.setGravity(Gravity.CENTER);
         tbrow0.addView(tv0);
 
         TextView tv1 = new TextView(this);
         tv1.setText(" País ");
         tv1.setTextAppearance(this, R.style.HeaderTextStyle);
+        tv1.setGravity(Gravity.CENTER);
         tbrow0.addView(tv1);
 
         TextView tv2 = new TextView(this);
-        tv2.setText(" Primer lugar ");
+        tv2.setText(" Primero ");
         tv2.setTextAppearance(this, R.style.HeaderTextStyle);
+        tv2.setGravity(Gravity.CENTER);
         tbrow0.addView(tv2);
 
         TextView tv3 = new TextView(this);
-        tv3.setText(" Segundo lugar ");
+        tv3.setText(" Segundo ");
         tv3.setTextAppearance(this, R.style.HeaderTextStyle);
+        tv3.setGravity(Gravity.CENTER);
         tbrow0.addView(tv3);
 
         stk.addView(tbrow0);
+
+        //Load all data
+        for (CountryDO item : countries)
+        {
+            //Set New Row
+            TableRow row = new TableRow(this);
+
+            ImageView imageView = new ImageView(this);
+            imageView.setPadding(4,4,4,4);
+            try
+            {
+                imageView.setImageDrawable(ContextCompat.getDrawable(this, FlagEntity.valueOf(item.getName().replace(" ", "_")).getDrawableResId()));
+            }catch (Exception ex)
+            {
+                imageView.setImageResource(R.drawable.flag_none);
+            }
+            row.addView(imageView);
+
+            TextView country = new TextView(this);
+            country.setText(item.getName());
+            country.setTextAppearance(this, R.style.CellTextStyle);
+            country.setGravity(Gravity.CENTER);
+            row.addView(country);
+
+            TextView first = new TextView(this);
+            first.setText(String.valueOf(item.getFistOnGroupCount()));
+            first.setTextAppearance(this, R.style.CellTextStyle);
+            first.setGravity(Gravity.CENTER);
+            row.addView(first);
+
+            TextView second = new TextView(this);
+            second.setText(String.valueOf(item.getSecondGroupCount()));
+            second.setTextAppearance(this, R.style.CellTextStyle);
+            second.setGravity(Gravity.CENTER);
+            row.addView(second);
+
+            stk.addView(row);
+        }
     }
 }
