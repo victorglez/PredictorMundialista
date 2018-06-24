@@ -57,7 +57,7 @@ public class GroupOneActivity  extends AppCompatActivity {
         predictionCount = 0;
 
         //Show Message
-        Snackbar.make(view, "Cargando la propabilidad de ganar en primero", Snackbar.LENGTH_LONG)
+        Snackbar.make(view, "Cargando la propabilidad de pasar en primero", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show();
 
         //Load all data for count group
