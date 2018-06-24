@@ -17,7 +17,7 @@
     <string name="menu_item_two_activity">Probabilidad para el segundo</string>
     <string name="menu_item_three_activity">Probabilidad de pasar</string>
     <string name="menu_item_four_activity">Probabilidad de perder</string>
-    <string name="menu_item_five_activity">Países por votación</string>
+    <string name="menu_item_five_activity">Países por puntuación</string>
     <string name="menu_group_prediction">Predictor</string>
     <string name="menu_item_prediction">Pronóstico Mundialista</string>
 
@@ -29,5 +29,6 @@
     <string name="two_activity_detail">Seleccione Letra de Grupo para ver Porcentaje de pasar a Octavos de Final en segundo lugar.</string>
     <string name="three_activity_detail">Seleccione Letra de Grupo para ver Porcentaje de pasar a Octavos de Final.</string>
     <string name="four_activity_detail">Seleccione Letra de Grupo para ver Porcentaje de no pasar a Octavos de Final.</string>
+    <string name="five_activity_detail">Puntuación para pasar a Octavos de Final. Seleccione Letra de Grupo para filtrar la información.</string>
 
 </resources>

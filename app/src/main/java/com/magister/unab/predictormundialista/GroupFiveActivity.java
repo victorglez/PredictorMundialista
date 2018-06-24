@@ -1,5 +1,6 @@
 package com.magister.unab.predictormundialista;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v4.content.ContextCompat;
@@ -7,6 +8,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TableLayout;
+import android.widget.TableRow;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -22,30 +26,27 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-public class GroupFourActivity extends AppCompatActivity {
+public class GroupFiveActivity extends AppCompatActivity {
 
     //Properties
-    private String[] countriesValue;
     private List<CountryDO> countries;
     private int groupSelected;
-    private int predictionCount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_group_four);
+        setContentView(R.layout.activity_group_five);
 
         //Init
-        countriesValue = new String[4];
-        countries = new ArrayList<>(4);
-        predictionCount = 0;
+        countries = new ArrayList<>();
     }
 
+
     /**
-     * Probabilidad en porcentaje de ganar para el grupo seleccionado
+     * Probabilidad en porcentaje para el grupo seleccionado
      * @param view View
      */
-    public void getValueProbabilityWinning(View view)
+    public void getValueProbability(View view)
     {
         groupSelected = GroupHelper.getNumGroupSelect(view);
 
@@ -53,10 +54,9 @@ public class GroupFourActivity extends AppCompatActivity {
         ChangeColorSelected (view);
 
         countries = GroupHelper.GetAllCountryForGroup (groupSelected);
-        predictionCount = 0;
 
         //Show Message
-        Snackbar.make(view, "Cargando la propabilidad de no pasar de fase", Snackbar.LENGTH_LONG)
+        Snackbar.make(view, "Cargando los resultados del grupo", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show();
 
         //Load all data for count group
@@ -173,8 +173,6 @@ public class GroupFourActivity extends AppCompatActivity {
             {
                 try
                 {
-                    predictionCount = (int) result.getChildrenCount();
-
                     //Clean for any change
                     cleanData ();
 
@@ -211,14 +209,11 @@ public class GroupFourActivity extends AppCompatActivity {
 
                     if (countries.size() > 0)
                     {
-                        //Set Percentage to Win with the Prediction Count
-                        setPercentageToWin ();
-
                         //Order by Des
                         orderCountries();
 
-                        //Set adapter
-                        setListAdapter ();
+                        //Set Table Data
+                        setTableData ();
                     }
                 }
                 catch (Exception ex)
@@ -272,40 +267,17 @@ public class GroupFourActivity extends AppCompatActivity {
     }
 
     /**
-     * Set Percentage with the Prediction Count
-     */
-    private void setPercentageToWin()
-    {
-        if (predictionCount > 0)
-        {
-            for (CountryDO item : countries)
-            {
-                float total = (item.getCount() - predictionCount) * -1;
-                float percentage = total/predictionCount * 100;
-                item.setPercentage(Math.round(percentage));
-            }
-        }
-    }
-
-    /**
-     * Set adapter of the list View
-     */
-    private void setListAdapter()
-    {
-        //Set adapter
-        ListView listView = findViewById(R.id.resultListView);
-        listView.setAdapter(new CountryArrayAdapter(this, countriesValue, countries));
-    }
-
-    /**
      * Order Countries
      */
-    private void orderCountries()
-    {
+    private void orderCountries() {
         Collections.sort(countries, new Comparator<CountryDO>() {
             @Override
             public int compare(CountryDO c1, CountryDO c2) {
-                return new Integer(c2.getPercentage()).compareTo(new Integer(c1.getPercentage()));
+                if (new Integer(c2.getFistOnGroupCount()).compareTo(new Integer(c1.getFistOnGroupCount())) == 0) {
+                    return new Integer(c2.getSecondGroupCount()).compareTo(new Integer(c1.getSecondGroupCount()));
+                } else {
+                    return new Integer(c2.getFistOnGroupCount()).compareTo(new Integer(c1.getFistOnGroupCount()));
+                }
             }
         });
     }
@@ -317,5 +289,38 @@ public class GroupFourActivity extends AppCompatActivity {
     private void showMessage (String smg)
     {
         Toast.makeText(this, smg, Toast.LENGTH_LONG).show();
+    }
+
+    /**
+     * Set Table Data View
+     */
+    private void setTableData()
+    {
+        TableLayout stk = (TableLayout) findViewById(R.id.resultTableView);
+
+        //Set Row
+        TableRow tbrow0 = new TableRow(this);
+
+        TextView tv0 = new TextView(this);
+        tv0.setText(" Bandera ");
+        tv0.setTextAppearance(this, R.style.HeaderTextStyle);
+        tbrow0.addView(tv0);
+
+        TextView tv1 = new TextView(this);
+        tv1.setText(" País ");
+        tv1.setTextAppearance(this, R.style.HeaderTextStyle);
+        tbrow0.addView(tv1);
+
+        TextView tv2 = new TextView(this);
+        tv2.setText(" Primer lugar ");
+        tv2.setTextAppearance(this, R.style.HeaderTextStyle);
+        tbrow0.addView(tv2);
+
+        TextView tv3 = new TextView(this);
+        tv3.setText(" Segundo lugar ");
+        tv3.setTextAppearance(this, R.style.HeaderTextStyle);
+        tbrow0.addView(tv3);
+
+        stk.addView(tbrow0);
     }
 }
