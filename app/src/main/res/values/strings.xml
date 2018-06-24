@@ -13,7 +13,7 @@
 
     <!--Main Activity Resources-->
     <string name="nav_header_title">Menú</string>
-    <string name="menu_item_one_activity">Primer lugar por grupos</string>
+    <string name="menu_item_one_activity">Probabilidad para el primer lugar</string>
     <string name="menu_item_two_activity">Grupos por segundo lugar</string>
     <string name="menu_item_three_activity">Probabilidad de ganar</string>
     <string name="menu_item_four_activity">Probabilidad de perder</string>
@@ -24,4 +24,6 @@
     <string name="navigation_drawer_open">Abrir Menú</string>
     <string name="navigation_drawer_close">Cerrar Menú</string>
     <string name="nav_header_desc">Menú de Navegación</string>
+
+    <string name="one_activity_detail">Seleccione Letra de Grupo para ver Porcentaje de pasar a Octavos de Final en primer lugar.</string>
 </resources>

@@ -2,9 +2,14 @@ package com.magister.unab.predictormundialista;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
+
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -44,11 +49,116 @@ public class GroupOneActivity  extends AppCompatActivity {
     public void getValueProbabilityWinning(View view)
     {
         groupSelected = GroupHelper.getNumGroupSelect(view);
+
+        //Change Color Selected
+        ChangeColorSelected (view);
+
         countries = GroupHelper.GetAllCountryForGroup (groupSelected);
         predictionCount = 0;
 
+        //Show Message
+        Snackbar.make(view, "Cargando la propabilidad de ganar", Snackbar.LENGTH_LONG)
+                .setAction("Action", null).show();
+
         //Load all data for count group
         setCountriesDataForGroup ();
+    }
+
+    /**
+     * Change Color Selected
+     * @param view Button
+     */
+    private void ChangeColorSelected (View view)
+    {
+        int id = view.getId();
+
+        //Button A
+        Button aBtn = findViewById(R.id.idBtnA);
+        if (id == aBtn.getId())
+        {
+            aBtn.setBackground(ContextCompat.getDrawable(this,R.color.colorAccent));
+        }
+        else
+        {
+            aBtn.setBackground(ContextCompat.getDrawable(this,R.color.colorPrimary));
+        }
+
+        //Button B
+        Button bBtn = findViewById(R.id.idBtnB);
+        if (id == bBtn.getId())
+        {
+            bBtn.setBackground(ContextCompat.getDrawable(this,R.color.colorAccent));
+        }
+        else
+        {
+            bBtn.setBackground(ContextCompat.getDrawable(this,R.color.colorPrimary));
+        }
+
+        //Button C
+        Button cBtn = findViewById(R.id.idBtnC);
+        if (id == cBtn.getId())
+        {
+            cBtn.setBackground(ContextCompat.getDrawable(this,R.color.colorAccent));
+        }
+        else
+        {
+            cBtn.setBackground(ContextCompat.getDrawable(this,R.color.colorPrimary));
+        }
+
+        //Button D
+        Button dBtn = findViewById(R.id.idBtnD);
+        if (id == dBtn.getId())
+        {
+            dBtn.setBackground(ContextCompat.getDrawable(this,R.color.colorAccent));
+        }
+        else
+        {
+            dBtn.setBackground(ContextCompat.getDrawable(this,R.color.colorPrimary));
+        }
+
+        //Button E
+        Button eBtn = findViewById(R.id.idBtnE);
+        if (id == eBtn.getId())
+        {
+            eBtn.setBackground(ContextCompat.getDrawable(this,R.color.colorAccent));
+        }
+        else
+        {
+            eBtn.setBackground(ContextCompat.getDrawable(this,R.color.colorPrimary));
+        }
+
+        //Button F
+        Button fBtn = findViewById(R.id.idBtnF);
+        if (id == fBtn.getId())
+        {
+            fBtn.setBackground(ContextCompat.getDrawable(this,R.color.colorAccent));
+        }
+        else
+        {
+            fBtn.setBackground(ContextCompat.getDrawable(this,R.color.colorPrimary));
+        }
+
+        //Button G
+        Button gBtn = findViewById(R.id.idBtnG);
+        if (id == gBtn.getId())
+        {
+            gBtn.setBackground(ContextCompat.getDrawable(this,R.color.colorAccent));
+        }
+        else
+        {
+            gBtn.setBackground(ContextCompat.getDrawable(this,R.color.colorPrimary));
+        }
+
+        //Button H
+        Button hBtn = findViewById(R.id.idBtnH);
+        if (id == hBtn.getId())
+        {
+            hBtn.setBackground(ContextCompat.getDrawable(this,R.color.colorAccent));
+        }
+        else
+        {
+            hBtn.setBackground(ContextCompat.getDrawable(this,R.color.colorPrimary));
+        }
     }
 
     /**
@@ -60,53 +170,61 @@ public class GroupOneActivity  extends AppCompatActivity {
 
         resultsDB.addValueEventListener(new ValueEventListener() {
             @Override
-            public void onDataChange(DataSnapshot result) {
-                predictionCount = (int) result.getChildrenCount();
-
-                //Clean for any change
-                cleanData ();
-
-                for (DataSnapshot prediction : result.getChildren())
+            public void onDataChange(DataSnapshot result)
+            {
+                try
                 {
-                    for (DataSnapshot group : prediction.getChildren())
+                    predictionCount = (int) result.getChildrenCount();
+
+                    //Clean for any change
+                    cleanData ();
+
+                    for (DataSnapshot prediction : result.getChildren())
                     {
-                        if (Integer.decode(group.getKey()) == groupSelected)
+                        for (DataSnapshot group : prediction.getChildren())
                         {
-                            String firstCountryOnGroup = null;
-                            String secondCountryOnGroup = null;
+                            if (Integer.decode(group.getKey()) == groupSelected)
+                            {
+                                String firstCountryOnGroup = null;
+                                String secondCountryOnGroup = null;
 
-                            //Load Teams of this Group
-                            for (DataSnapshot team : group.getChildren()) {
-                                switch (team.getKey())
-                                {
-                                    case "0":
-                                        firstCountryOnGroup = team.getValue().toString();
-                                        break;
-                                    case "1":
-                                        secondCountryOnGroup = team.getValue().toString();
-                                        break;
+                                //Load Teams of this Group
+                                for (DataSnapshot team : group.getChildren()) {
+                                    switch (team.getKey())
+                                    {
+                                        case "0":
+                                            firstCountryOnGroup = team.getValue().toString();
+                                            break;
+                                        case "1":
+                                            secondCountryOnGroup = team.getValue().toString();
+                                            break;
+                                    }
                                 }
+
+                                //Set in the List the First/Second on Group
+                                setFirstSecondPlaceOnGroup (firstCountryOnGroup, secondCountryOnGroup);
+
+                                //To the next prediction
+                                break;
                             }
-
-                            //Set in the List the First/Second on Group
-                            setFirstSecondPlaceOnGroup (firstCountryOnGroup, secondCountryOnGroup);
-
-                            //To the next prediction
-                            break;
                         }
                     }
+
+                    if (countries.size() > 0)
+                    {
+                        //Set Percentage to Win with the Prediction Count
+                        setPercentageToWin ();
+
+                        //Order by Des
+                        orderCountries();
+
+                        //Set adapter
+                        setListAdapter ();
+                    }
                 }
-
-                if (countries.size() > 0)
+                catch (Exception ex)
                 {
-                    //Set Percentage to Win with the Prediction Count
-                    setPercentageToWin ();
-
-                    //Order by Des
-                    OrderCountries();
-
-                    //Set adapter
-                    setListAdapter ();
+                    showMessage("Oops! A ocurrido un error, por favor contáctenos");
                 }
             }
             @Override
@@ -163,9 +281,9 @@ public class GroupOneActivity  extends AppCompatActivity {
         {
             for (CountryDO item : countries)
             {
-                double first = item.getFistOnGroupCount();
-                double percentage = first/predictionCount * 100;
-                item.setPercentage(Math.round((float) percentage));
+                float first = item.getFistOnGroupCount();
+                float percentage = first/predictionCount * 100;
+                item.setPercentage(Math.round(percentage));
             }
         }
     }
@@ -183,7 +301,7 @@ public class GroupOneActivity  extends AppCompatActivity {
     /**
      * Order Countries
      */
-    private void OrderCountries()
+    private void orderCountries()
     {
         Collections.sort(countries, new Comparator<CountryDO>() {
             @Override
@@ -191,5 +309,14 @@ public class GroupOneActivity  extends AppCompatActivity {
                 return new Integer(c2.getPercentage()).compareTo(new Integer(c1.getPercentage()));
             }
         });
+    }
+
+    /**
+     * Show Message
+     * @param smg Message
+     */
+    private void showMessage (String smg)
+    {
+        Toast.makeText(this, smg, Toast.LENGTH_LONG).show();
     }
 }
