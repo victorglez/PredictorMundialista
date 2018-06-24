@@ -192,6 +192,7 @@ public class CountryActivity extends AppCompatActivity implements ViewPager.OnPa
         }
         sendDataToFirebase();
         Toast.makeText(this, "Enviado a firebase!", Toast.LENGTH_LONG).show();
+        finish();
     }
 
     private boolean validateDataToSend(){
