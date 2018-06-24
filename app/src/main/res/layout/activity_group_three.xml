@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fondo"
-    tools:context=".GroupTwoActivity">
+    tools:context=".GroupThreeActivity">
 
     <Button
         android:id="@+id/idBtnH"
@@ -174,7 +174,7 @@
         android:layout_marginBottom="8dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
-        android:text="@string/menu_item_two_activity"
+        android:text="@string/menu_item_three_activity"
         android:textColor="#FFFFFF"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -190,7 +190,7 @@
         android:layout_marginEnd="24dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="8dp"
-        android:text="@string/two_activity_detail"
+        android:text="@string/three_activity_detail"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

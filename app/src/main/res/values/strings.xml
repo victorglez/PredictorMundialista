@@ -15,7 +15,7 @@
     <string name="nav_header_title">Menú</string>
     <string name="menu_item_one_activity">Probabilidad para el primero</string>
     <string name="menu_item_two_activity">Probabilidad para el segundo</string>
-    <string name="menu_item_three_activity">Probabilidad de ganar</string>
+    <string name="menu_item_three_activity">Probabilidad de pasar</string>
     <string name="menu_item_four_activity">Probabilidad de perder</string>
     <string name="menu_item_five_activity">Países por votación</string>
     <string name="menu_group_prediction">Predictor</string>
@@ -27,4 +27,6 @@
 
     <string name="one_activity_detail">Seleccione Letra de Grupo para ver Porcentaje de pasar a Octavos de Final en primer lugar.</string>
     <string name="two_activity_detail">Seleccione Letra de Grupo para ver Porcentaje de pasar a Octavos de Final en segundo lugar.</string>
+    <string name="three_activity_detail">Seleccione Letra de Grupo para ver Porcentaje de pasar a Octavos de Final.</string>
+
 </resources>

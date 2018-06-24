@@ -85,7 +85,7 @@ public class MainActivity extends AppCompatActivity
                 break;
 
             case R.id.menu_item_three_activity:
-                Intent intent_menu_item_three_activity = new Intent(this, GroupOneActivity.class);
+                Intent intent_menu_item_three_activity = new Intent(this, GroupThreeActivity.class);
                 startActivity(intent_menu_item_three_activity);
                 break;
 
