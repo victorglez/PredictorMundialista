@@ -1,6 +1,5 @@
 package com.magister.unab.predictormundialista;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.design.widget.Snackbar;
 import android.support.v4.content.ContextCompat;
@@ -23,7 +22,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-public class GroupOneActivity  extends AppCompatActivity {
+public class GroupTwoActivity extends AppCompatActivity {
 
     //Properties
     private String[] countriesValue;
@@ -34,7 +33,7 @@ public class GroupOneActivity  extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_group_one);
+        setContentView(R.layout.activity_group_two);
 
         //Init
         countriesValue = new String[4];
@@ -57,7 +56,7 @@ public class GroupOneActivity  extends AppCompatActivity {
         predictionCount = 0;
 
         //Show Message
-        Snackbar.make(view, "Cargando la propabilidad de ganar en primero", Snackbar.LENGTH_LONG)
+        Snackbar.make(view, "Cargando la propabilidad de ganar en segundo", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show();
 
         //Load all data for count group
@@ -281,8 +280,8 @@ public class GroupOneActivity  extends AppCompatActivity {
         {
             for (CountryDO item : countries)
             {
-                float first = item.getFistOnGroupCount();
-                float percentage = first/predictionCount * 100;
+                float second = item.getSecondGroupCount();
+                float percentage = second/predictionCount * 100;
                 item.setPercentage(Math.round(percentage));
             }
         }

@@ -23,6 +23,8 @@
                   android:label="@string/menu_item_prediction"/>
         <activity android:name=".GroupOneActivity"
                   android:label="@string/menu_item_one_activity"/>
+        <activity android:name=".GroupTwoActivity"
+                  android:label="@string/menu_item_two_activity"/>
     </application>
 
 </manifest>
