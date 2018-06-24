@@ -165,7 +165,7 @@ public class GroupOneActivity  extends AppCompatActivity {
             {
                 double first = item.getFistOnGroupCount();
                 double percentage = first/predictionCount * 100;
-                item.setPercentage((int)percentage);
+                item.setPercentage(Math.round((float) percentage));
             }
         }
     }
