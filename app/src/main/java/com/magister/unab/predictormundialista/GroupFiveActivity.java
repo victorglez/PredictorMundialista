@@ -41,28 +41,99 @@ public class GroupFiveActivity extends AppCompatActivity {
 
         //Init
         countries = new ArrayList<>();
+        groupSelected = -1;
+
+        //Cargar todos los datos
+        getAllValue();
     }
 
-
     /**
-     * Probabilidad en porcentaje para el grupo seleccionado
-     * @param view View
+     * Cargar todos los datos
      */
-    public void getValueProbability(View view)
+    public void getAllValue()
     {
-        groupSelected = GroupHelper.getNumGroupSelect(view);
+        //Change Color for Default Value
+        ChangeColorForDefault ();
 
-        //Change Color Selected
-        ChangeColorSelected (view);
-
-        countries = GroupHelper.GetAllCountryForGroup (groupSelected);
+        countries = GroupHelper.GetAllCountry();
 
         //Show Message
-        Snackbar.make(view, "Cargando los resultados del grupo", Snackbar.LENGTH_LONG)
-                .setAction("Action", null).show();
+        showMessage("Cargando todos los resultados");
 
-        //Load all data for count group
-        setCountriesDataForGroup ();
+        //Load all data
+        setCountriesData ();
+    }
+
+    /**
+     * Cargar los datos del grupo
+     * @param view View
+     */
+    public void getValueForGroup(View view)
+    {
+        int tmp = GroupHelper.getNumGroupSelect(view);
+
+        if ((groupSelected > -1 && tmp != groupSelected) || (groupSelected == -1))
+        {
+            groupSelected = tmp;
+
+            //Change Color Selected
+            ChangeColorSelected (view);
+
+            countries = GroupHelper.GetAllCountryForGroup (groupSelected);
+
+            //Show Message
+            Snackbar.make(view, "Cargando los resultados del grupo", Snackbar.LENGTH_LONG)
+                    .setAction("Action", null).show();
+
+            //Load all data for count group
+            setCountriesDataForGroup ();
+        }
+        else
+        {
+            groupSelected = -1;
+
+            //Cargar todos los datos
+            getAllValue();
+        }
+
+    }
+
+    /**
+     * Change Color Selected
+     */
+    private void ChangeColorForDefault ()
+    {
+        //Button A
+        Button aBtn = findViewById(R.id.idBtnA);
+        aBtn.setBackground(ContextCompat.getDrawable(this,R.color.colorPrimary));
+
+        //Button B
+        Button bBtn = findViewById(R.id.idBtnB);
+        bBtn.setBackground(ContextCompat.getDrawable(this,R.color.colorPrimary));
+
+        //Button C
+        Button cBtn = findViewById(R.id.idBtnC);
+        cBtn.setBackground(ContextCompat.getDrawable(this,R.color.colorPrimary));
+
+        //Button D
+        Button dBtn = findViewById(R.id.idBtnD);
+        dBtn.setBackground(ContextCompat.getDrawable(this,R.color.colorPrimary));
+
+        //Button E
+        Button eBtn = findViewById(R.id.idBtnE);
+        eBtn.setBackground(ContextCompat.getDrawable(this,R.color.colorPrimary));
+
+        //Button F
+        Button fBtn = findViewById(R.id.idBtnF);
+        fBtn.setBackground(ContextCompat.getDrawable(this,R.color.colorPrimary));
+
+        //Button G
+        Button gBtn = findViewById(R.id.idBtnG);
+        gBtn.setBackground(ContextCompat.getDrawable(this,R.color.colorPrimary));
+
+        //Button H
+        Button hBtn = findViewById(R.id.idBtnH);
+        hBtn.setBackground(ContextCompat.getDrawable(this,R.color.colorPrimary));
     }
 
     /**
@@ -160,6 +231,67 @@ public class GroupFiveActivity extends AppCompatActivity {
         {
             hBtn.setBackground(ContextCompat.getDrawable(this,R.color.colorPrimary));
         }
+    }
+
+    /**
+     * Set all data for Countries
+     */
+    private void setCountriesData ()
+    {
+        DatabaseReference resultsDB = FirebaseDatabase.getInstance().getReference().child("resultados");
+
+        resultsDB.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot result)
+            {
+                try
+                {
+                    //Clean for any change
+                    cleanData ();
+
+                    for (DataSnapshot prediction : result.getChildren())
+                    {
+                        for (DataSnapshot group : prediction.getChildren())
+                        {
+                            String firstCountryOnGroup = null;
+                            String secondCountryOnGroup = null;
+
+                            //Load Teams of this Group
+                            for (DataSnapshot team : group.getChildren()) {
+                                switch (team.getKey())
+                                {
+                                    case "0":
+                                        firstCountryOnGroup = team.getValue().toString();
+                                        break;
+                                    case "1":
+                                        secondCountryOnGroup = team.getValue().toString();
+                                        break;
+                                }
+                            }
+
+                            //Set in the List the First/Second on Group
+                            setFirstSecondPlaceOnGroup (firstCountryOnGroup, secondCountryOnGroup);
+                        }
+                    }
+
+                    if (countries.size() > 0)
+                    {
+                        //Order by Des
+                        orderCountries();
+
+                        //Set Table Data
+                        setTableData ();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    showMessage("Oops! A ocurrido un error, por favor contáctenos");
+                }
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+            }
+        });
     }
 
     /**

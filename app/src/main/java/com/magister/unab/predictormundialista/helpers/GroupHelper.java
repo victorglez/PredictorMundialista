@@ -87,4 +87,45 @@ public class GroupHelper {
                         new CountryDO ("Japón"));
         }
     }
+
+    /**
+     * Get All Country
+     * @return List of Country
+     */
+    public static List <CountryDO> GetAllCountry ()
+    {
+        return Arrays.asList(
+                new CountryDO ("Rusia"),
+                new CountryDO ("Arabia"),
+                new CountryDO ("Egipto"),
+                new CountryDO ("Uruguay"),
+                new CountryDO ("Portugal"),
+                new CountryDO ("España"),
+                new CountryDO ("Marruecos"),
+                new CountryDO ("Iran"),
+                new CountryDO ("Francia"),
+                new CountryDO ("Australia"),
+                new CountryDO ("Perú"),
+                new CountryDO ("Dinamarca"),
+                new CountryDO ("Argentina"),
+                new CountryDO ("Islandia"),
+                new CountryDO ("Croacia"),
+                new CountryDO ("Nigeria"),
+                new CountryDO ("Brasil"),
+                new CountryDO ("Suiza"),
+                new CountryDO ("Costa Rica"),
+                new CountryDO ("Serbia"),
+                new CountryDO ("Alemania"),
+                new CountryDO ("México"),
+                new CountryDO ("Suecia"),
+                new CountryDO ("Corea del Sur"),
+                new CountryDO ("Bélgica"),
+                new CountryDO ("Panamá"),
+                new CountryDO ("Túnez"),
+                new CountryDO ("Inglaterra"),
+                new CountryDO ("Polonia"),
+                new CountryDO ("Senegal"),
+                new CountryDO ("Colombia"),
+                new CountryDO ("Japón"));
+    }
 }
