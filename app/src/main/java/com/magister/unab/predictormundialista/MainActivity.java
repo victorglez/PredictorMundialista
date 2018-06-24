@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity
                 break;
 
             case R.id.menu_item_four_activity:
-                Intent intent_menu_item_four_activity = new Intent(this, GroupOneActivity.class);
+                Intent intent_menu_item_four_activity = new Intent(this, GroupFourActivity.class);
                 startActivity(intent_menu_item_four_activity);
                 break;
 

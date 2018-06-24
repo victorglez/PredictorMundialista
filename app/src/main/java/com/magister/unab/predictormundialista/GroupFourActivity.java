@@ -22,7 +22,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-public class GroupThreeActivity extends AppCompatActivity {
+public class GroupFourActivity extends AppCompatActivity {
 
     //Properties
     private String[] countriesValue;
@@ -56,7 +56,7 @@ public class GroupThreeActivity extends AppCompatActivity {
         predictionCount = 0;
 
         //Show Message
-        Snackbar.make(view, "Cargando la propabilidad de pasar de fase", Snackbar.LENGTH_LONG)
+        Snackbar.make(view, "Cargando la propabilidad de no pasar de fase", Snackbar.LENGTH_LONG)
                 .setAction("Action", null).show();
 
         //Load all data for count group
@@ -280,7 +280,7 @@ public class GroupThreeActivity extends AppCompatActivity {
         {
             for (CountryDO item : countries)
             {
-                float total = item.getCount();
+                float total = (item.getCount() - predictionCount) * -1;
                 float percentage = total/predictionCount * 100;
                 item.setPercentage(Math.round(percentage));
             }

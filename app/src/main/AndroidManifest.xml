@@ -27,6 +27,8 @@
                   android:label="@string/menu_item_two_activity"/>
         <activity android:name=".GroupThreeActivity"
                   android:label="@string/menu_item_three_activity"/>
+        <activity android:name=".GroupFourActivity"
+                  android:label="@string/menu_item_four_activity"/>
     </application>
 
 </manifest>

@@ -28,5 +28,6 @@
     <string name="one_activity_detail">Seleccione Letra de Grupo para ver Porcentaje de pasar a Octavos de Final en primer lugar.</string>
     <string name="two_activity_detail">Seleccione Letra de Grupo para ver Porcentaje de pasar a Octavos de Final en segundo lugar.</string>
     <string name="three_activity_detail">Seleccione Letra de Grupo para ver Porcentaje de pasar a Octavos de Final.</string>
+    <string name="four_activity_detail">Seleccione Letra de Grupo para ver Porcentaje de no pasar a Octavos de Final.</string>
 
 </resources>
