@@ -1,10 +1,12 @@
-package com.magister.unab.predictormundialista;
+package com.magister.unab.predictormundialista.adapters;
 
 import android.content.Context;
 import android.support.v4.view.PagerAdapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.magister.unab.predictormundialista.ModelObject;
 
 public class CustomPagerAdapter extends PagerAdapter {
 

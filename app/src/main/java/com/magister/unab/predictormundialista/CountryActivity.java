@@ -1,15 +1,11 @@
 package com.magister.unab.predictormundialista;
 
-import android.content.Intent;
-import android.os.Debug;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.view.Window;
-import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -17,6 +13,7 @@ import android.support.constraint.ConstraintLayout;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.magister.unab.predictormundialista.adapters.CustomPagerAdapter;
 
 import java.util.ArrayList;
 import java.util.Arrays;

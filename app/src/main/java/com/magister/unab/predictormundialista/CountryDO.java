@@ -1,32 +1,59 @@
 package com.magister.unab.predictormundialista;
 
+import java.math.BigInteger;
+
 public class CountryDO {
-        private String name;
-        private int count;
-        private double percentage;
 
-        public int getCount(){
-            return this.count;
-        }
+    private String name;
+    private int fistOnGroupCount;
+    private int secondGroupCount;
+    private int percentage;
 
-        public void setCount(int count){
-            this.count = count;
-        }
+    /**
+     * Constructor
+     * @param name Country Name
+     */
+    public CountryDO (String name)
+    {
+        this.name = name;
+        this.fistOnGroupCount = 0;
+        this.secondGroupCount = 0;
+        this.percentage = 0;
+    }
 
-        public int getName(){
-            return this.count;
-        }
+    public int getCount(){
+        return this.fistOnGroupCount + this.secondGroupCount;
+    }
 
-        public void setName(String name){
-            this.name = name;
-        }
+    public String getName(){
+        return this.name;
+    }
 
-        public double getPercentage(){
-            return this.percentage;
-        }
+    public void setName(String name){
+        this.name = name;
+    }
 
-        public void setPercentage(double percentage){
-            this.percentage = percentage;
-        }
+    public int getPercentage(){
+        return this.percentage;
+    }
 
+    public void setPercentage(int percentage){
+        this.percentage = percentage;
+    }
+
+    public int getFistOnGroupCount() {
+        return fistOnGroupCount;
+    }
+
+    public void setFistOnGroupCount(int fistOnGroupCount) {
+        this.fistOnGroupCount = fistOnGroupCount;
+    }
+
+    public int getSecondGroupCount() {
+        return secondGroupCount;
+    }
+
+    public void setSecondGroupCount(int secondGroupCount) {
+        this.secondGroupCount = secondGroupCount;
+    }
 }
